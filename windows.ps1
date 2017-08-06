@@ -16,18 +16,18 @@ Write-Host "Configuring System..." -ForegroundColor "Yellow"
 # Set Computer Name
 (Get-WmiObject Win32_ComputerSystem).Rename("CHOZO") | Out-Null
 
-## Set DisplayName for my account. Use only if you are not using a Microsoft Account
-#$myIdentity=[System.Security.Principal.WindowsIdentity]::GetCurrent()
-#$user = Get-WmiObject Win32_UserAccount | Where {$_.Caption -eq $myIdentity.Name}
-#$user.FullName = "Jay Harris
-#$user.Put() | Out-Null
-#Remove-Variable user
-#Remove-Variable myIdentity
+# Set DisplayName for my account. Use only if you are not using a Microsoft Account
+$myIdentity=[System.Security.Principal.WindowsIdentity]::GetCurrent()
+$user = Get-WmiObject Win32_UserAccount | Where {$_.Caption -eq $myIdentity.Name}
+$user.FullName = "Desmond Naranjo"
+$user.Put() | Out-Null
+Remove-Variable user
+Remove-Variable myIdentity
 
 # Enable Developer Mode
-#Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" "AllowDevelopmentWithoutDevLicense" 1
+Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" "AllowDevelopmentWithoutDevLicense" 1
 # Bash on Windows
-#Enable-WindowsOptionalFeature -Online -All -FeatureName "Microsoft-Windows-Subsystem-Linux" -NoRestart -WarningAction SilentlyContinue | Out-Null
+Enable-WindowsOptionalFeature -Online -All -FeatureName "Microsoft-Windows-Subsystem-Linux" -NoRestart -WarningAction SilentlyContinue | Out-Null
 
 ###############################################################################
 ### Privacy                                                                   #
