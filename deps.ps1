@@ -53,7 +53,7 @@ choco install Firefox             --limit-output
 choco install visualstudiocode    --limit-output
 choco install vim                 --limit-output
 choco install docker-for-windows  --limit-output
-choco install yarn                --limit-output
+choco install yarn                --limit-output --no-dependencies
 choco install elixir              --limit-output
 
 Refresh-Environment
