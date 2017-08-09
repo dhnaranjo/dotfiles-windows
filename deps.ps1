@@ -51,7 +51,7 @@ choco install Firefox             --limit-output
 
 # dev tools and frameworks
 choco install visualstudiocode    --limit-output -params='"/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders"'
-#choco install vim                 --limit-output
+choco install vim                 --limit-output
 choco install docker-for-windows  --limit-output
 #choco install yarn                --limit-output --no-dependencies
 #choco install elixir              --limit-output
