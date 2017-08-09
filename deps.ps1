@@ -39,10 +39,10 @@ if ((which cinst) -eq $null) {
 # system and cli
 choco install curl                --limit-output
 choco install nuget.commandline   --limit-output
-choco install webpi               --limit-output
-choco install git                 --limit-output -params '"/GitAndUnixToolsOnPath /NoShellIntegration"'
-choco install nvm                 --limit-output
-choco install ruby                --limit-output
+#choco install webpi               --limit-output
+choco install git                 --limit-output -params='"/GitAndUnixToolsOnPath /NoShellIntegration"'
+#choco install nvm                 --limit-output
+#choco install ruby                --limit-output
 choco install poshgit             --limit-output
 
 # browsers
@@ -50,21 +50,21 @@ choco install GoogleChrome        --limit-output
 choco install Firefox             --limit-output
 
 # dev tools and frameworks
-choco install visualstudiocode    --limit-output
-choco install vim                 --limit-output
+choco install visualstudiocode    --limit-output -params='"/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders"'
+#choco install vim                 --limit-output
 choco install docker-for-windows  --limit-output
-choco install yarn                --limit-output --no-dependencies
-choco install elixir              --limit-output
+#choco install yarn                --limit-output --no-dependencies
+#choco install elixir              --limit-output
 
 Refresh-Environment
 
-nvm on
-$nodeLtsVersion = choco search nodejs-lts --limit-output | ConvertFrom-String -TemplateContent "{Name:package-name}\|{Version:1.11.1}" | Select -ExpandProperty "Version"
-nvm install $nodeLtsVersion
-nvm use $nodeLtsVersion
-Remove-Variable nodeLtsVersion
+#nvm on
+#$nodeLtsVersion = choco search nodejs-lts --limit-output | ConvertFrom-String -TemplateContent "{Name:package-name}\|{Version:1.11.1}" | Select -ExpandProperty "Version"
+#nvm install $nodeLtsVersion
+#nvm use $nodeLtsVersion
+#Remove-Variable nodeLtsVersion
 
-gem pristine --all --env-shebang
+#gem pristine --all --env-shebang
 
 ### Windows Features
 
@@ -74,6 +74,6 @@ gem pristine --all --env-shebang
 #webpicmd /Install /AcceptEula /Products:"Python279"
 
 ### Node Packages
-Write-Host "Installing Node Packages..." -ForegroundColor "Yellow"
-if (which yarn) {
-}
+#Write-Host "Installing Node Packages..." -ForegroundColor "Yellow"
+#if (which yarn) {
+#}
