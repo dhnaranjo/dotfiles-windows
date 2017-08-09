@@ -14,7 +14,7 @@ if (!(Verify-Elevated)) {
 Write-Host "Configuring System..." -ForegroundColor "Yellow"
 
 # Set Computer Name
-(Get-WmiObject Win32_ComputerSystem).Rename("ohgawd") | Out-Null
+(Get-WmiObject Win32_ComputerSystem).Rename("ohgawsh") | Out-Null
 
 # Set DisplayName for my account. Use only if you are not using a Microsoft Account
 $myIdentity=[System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -187,6 +187,7 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Persona
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 1
 
 # Theme colors
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorizationColor" 0xc44c4a48
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "AccentColor" 0x00242728
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "AccentColorInactive" 0x00494d50
 
