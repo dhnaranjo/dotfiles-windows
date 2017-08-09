@@ -2,6 +2,8 @@
 (Forked from Jay Harris's excellent dotfiles for Windows)
 
 ## Installation
+### Fresh install
+iex ((new-object net.webclient).DownloadString('https://raw.github.com/dhnaranjo/dotfiles-windows/master/setup/install.ps1'))
 ### Using Git and the bootstrap script
 From PowerShell:
 ```posh
