@@ -1,3 +1,8 @@
+# Docker related commands
+function DockerRunImage{
+docker run --rm --volume ${PWD}:/app -ti -w /app $args
+}
+
 # Basic commands
 function which($name) { Get-Command $name -ErrorAction SilentlyContinue | Select-Object Definition }
 function touch($file) { "" | Out-File $file -Encoding ASCII }
